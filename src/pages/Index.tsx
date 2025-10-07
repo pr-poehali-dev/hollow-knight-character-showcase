@@ -11,7 +11,8 @@ const characters = [
     role: 'Protagonist',
     description: 'Silent vessel created to contain the infection. Wields a nail and explores the depths of Hallownest.',
     location: 'Dirtmouth',
-    type: 'character'
+    type: 'character',
+    icon: 'Sword'
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const characters = [
     role: 'Protector',
     description: 'Princess-protector of Hallownest. Daughter of the Pale King and Herrah the Beast.',
     location: 'Kingdom\'s Edge',
-    type: 'character'
+    type: 'character',
+    icon: 'Zap'
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const characters = [
     role: 'Guide',
     description: 'Kind old bug residing in Dirtmouth. Provides guidance to travelers.',
     location: 'Dirtmouth',
-    type: 'character'
+    type: 'character',
+    icon: 'Heart'
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ const characters = [
     role: 'Scholar',
     description: 'A thoughtful wanderer exploring Hallownest. Once served Monomon the Teacher.',
     location: 'Various',
-    type: 'character'
+    type: 'character',
+    icon: 'BookMarked'
   }
 ];
 
@@ -46,7 +50,8 @@ const bosses = [
     difficulty: 'Hard',
     description: 'The vessel chosen to seal the Radiance. Final guardian of the Temple of the Black Egg.',
     location: 'Temple of the Black Egg',
-    type: 'boss'
+    type: 'boss',
+    icon: 'Swords'
   },
   {
     id: 2,
@@ -54,7 +59,8 @@ const bosses = [
     difficulty: 'Extreme',
     description: 'Ancient god of light and dreams. Source of the infection plaguing Hallownest.',
     location: 'Dream Realm',
-    type: 'boss'
+    type: 'boss',
+    icon: 'Sun'
   },
   {
     id: 3,
@@ -62,7 +68,8 @@ const bosses = [
     difficulty: 'Medium',
     description: 'Leader of the Soul Sanctum. Became consumed by his experiments with soul magic.',
     location: 'Soul Sanctum',
-    type: 'boss'
+    type: 'boss',
+    icon: 'Ghost'
   },
   {
     id: 4,
@@ -70,7 +77,8 @@ const bosses = [
     difficulty: 'Medium',
     description: 'Three noble warriors who rule over the Mantis Tribe with honor and strength.',
     location: 'Mantis Village',
-    type: 'boss'
+    type: 'boss',
+    icon: 'Flame'
   }
 ];
 
@@ -171,13 +179,16 @@ export default function Index() {
               {characters.map((char) => (
                 <Card
                   key={char.id}
-                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 p-6"
+                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#805CF6] flex items-center justify-center flex-shrink-0">
-                      <Icon name="User" size={32} className="text-white" />
+                  <div className="flex flex-col">
+                    <div className="h-48 bg-gradient-to-br from-[#1a1f2c] via-[#8B5CF6]/20 to-[#805CF6]/30 flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOEI1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#805CF6] flex items-center justify-center shadow-2xl shadow-[#8B5CF6]/50 z-10">
+                        <Icon name={char.icon} size={48} className="text-white" />
+                      </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-2xl font-bold text-[#E0E0E0]">{char.name}</h3>
                         <Badge className="bg-[#805CF6] text-white">{char.role}</Badge>
@@ -202,13 +213,16 @@ export default function Index() {
               {bosses.map((boss) => (
                 <Card
                   key={boss.id}
-                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 p-6"
+                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#805CF6] to-[#6E59A5] flex items-center justify-center flex-shrink-0">
-                      <Icon name="Skull" size={32} className="text-white" />
+                  <div className="flex flex-col">
+                    <div className="h-48 bg-gradient-to-br from-[#1a1f2c] via-[#805CF6]/30 to-[#6E59A5]/40 flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODA1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#805CF6] to-[#6E59A5] flex items-center justify-center shadow-2xl shadow-[#805CF6]/50 z-10">
+                        <Icon name={boss.icon} size={48} className="text-white" />
+                      </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-2xl font-bold text-[#E0E0E0]">{boss.name}</h3>
                         <Badge
