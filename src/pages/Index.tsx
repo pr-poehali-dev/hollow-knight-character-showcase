@@ -8,30 +8,30 @@ import Particles from '@/components/Particles';
 const characters = [
   {
     id: 1,
-    name: 'The Knight',
-    role: 'Protagonist',
-    description: 'Silent vessel created to contain the infection. Wields a nail and explores the depths of Hallownest.',
-    location: 'Dirtmouth',
+    name: 'Рыцарь',
+    role: 'Протагонист',
+    description: 'Безмолвный сосуд, созданный для сдерживания инфекции. Владеет иглой и исследует глубины Халлоунеста.',
+    location: 'Дёртмаут',
     type: 'character',
     icon: 'Sword',
     image: 'https://cdn.poehali.dev/files/3e6a19fb-5763-4335-bba3-64ad8264c003.jpg'
   },
   {
     id: 2,
-    name: 'Hornet',
-    role: 'Protector',
-    description: 'Princess-protector of Hallownest. Daughter of the Pale King and Herrah the Beast.',
-    location: 'Kingdom\'s Edge',
+    name: 'Хорнет',
+    role: 'Защитница',
+    description: 'Принцесса-защитница Халлоунеста. Дочь Бледного Короля и Херры Зверя.',
+    location: 'Край Королевства',
     type: 'character',
     icon: 'Zap',
     image: 'https://cdn.poehali.dev/files/f756e43a-b798-4560-8577-6fd64d47a4f8.jpg'
   },
   {
     id: 3,
-    name: 'Quirrel',
-    role: 'Scholar',
-    description: 'A thoughtful wanderer exploring Hallownest. Once served Monomon the Teacher.',
-    location: 'Various',
+    name: 'Куиррел',
+    role: 'Учёный',
+    description: 'Задумчивый странник, исследующий Халлоунест. Когда-то служил Учительнице Момомон.',
+    location: 'Разные локации',
     type: 'character',
     icon: 'BookMarked',
     image: 'https://cdn.poehali.dev/files/2a974248-f9e0-4a54-81f4-4c565526f5c3.jpg'
@@ -41,30 +41,30 @@ const characters = [
 const bosses = [
   {
     id: 1,
-    name: 'Hollow Knight',
-    difficulty: 'Hard',
-    description: 'The vessel chosen to seal the Radiance. Final guardian of the Temple of the Black Egg.',
-    location: 'Temple of the Black Egg',
+    name: 'Полый Рыцарь',
+    difficulty: 'Сложный',
+    description: 'Сосуд, избранный для заточения Сияния. Последний страж Храма Чёрного Яйца.',
+    location: 'Храм Чёрного Яйца',
     type: 'boss',
     icon: 'Swords',
     image: 'https://cdn.poehali.dev/files/43adc076-69a0-43b9-a4bd-bb8e56312562.png'
   },
   {
     id: 2,
-    name: 'The Radiance',
-    difficulty: 'Extreme',
-    description: 'Ancient god of light and dreams. Source of the infection plaguing Hallownest.',
-    location: 'Dream Realm',
+    name: 'Сияние',
+    difficulty: 'Экстремальный',
+    description: 'Древний бог света и снов. Источник инфекции, поразившей Халлоунест.',
+    location: 'Царство Снов',
     type: 'boss',
     icon: 'Sun',
     image: 'https://cdn.poehali.dev/files/b3efda4f-01b8-41fc-aadf-dce4046fef3d.jpg'
   },
   {
     id: 3,
-    name: 'Mantis Lords',
-    difficulty: 'Medium',
-    description: 'Three noble warriors who rule over the Mantis Tribe with honor and strength.',
-    location: 'Mantis Village',
+    name: 'Повелительницы Богомолов',
+    difficulty: 'Средний',
+    description: 'Три благородных воительницы, правящие племенем богомолов с честью и силой.',
+    location: 'Деревня Богомолов',
     type: 'boss',
     icon: 'Flame',
     image: 'https://cdn.poehali.dev/files/b3411d37-a9f3-4045-b1e3-ccf6dae17ecc.png'
@@ -74,27 +74,27 @@ const bosses = [
 const loreEntries = [
   {
     id: 1,
-    title: 'The Pale King',
-    content: 'Once ruler of Hallownest, the Pale King brought civilization and sapience to the bugs through his pale light. In desperation to save his kingdom from the Radiance, he created vessels from void.',
-    category: 'History'
+    title: 'Бледный Король',
+    content: 'Некогда правитель Халлоунеста, Бледный Король даровал цивилизацию и разум жукам своим бледным светом. В отчаянии спасти королевство от Сияния, он создал сосуды из пустоты.',
+    category: 'История'
   },
   {
     id: 2,
-    title: 'The Infection',
-    content: 'A plague of light and madness spread by the Radiance through dreams. It corrupts the minds of bugs, turning them into husks driven only by rage.',
-    category: 'Plague'
+    title: 'Инфекция',
+    content: 'Чума света и безумия, распространяемая Сиянием через сны. Она поражает разум жуков, превращая их в оболочки, одержимые яростью.',
+    category: 'Чума'
   },
   {
     id: 3,
-    title: 'Hallownest',
-    content: 'A vast underground kingdom carved beneath the dying surface world. Once prosperous, now fallen to ruin and infection.',
-    category: 'Kingdom'
+    title: 'Халлоунест',
+    content: 'Огромное подземное королевство, вырезанное под угасающим наземным миром. Некогда процветающее, ныне павшее в руины и инфекцию.',
+    category: 'Королевство'
   },
   {
     id: 4,
-    title: 'The Void',
-    content: 'An ancient power that exists beneath the Abyss. Neither light nor darkness, it represents emptiness and negation.',
-    category: 'Power'
+    title: 'Пустота',
+    content: 'Древняя сила, существующая под Бездной. Ни свет, ни тьма — она олицетворяет небытие и отрицание.',
+    category: 'Сила'
   }
 ];
 
@@ -110,17 +110,17 @@ export default function Index() {
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-white text-glow tracking-[0.2em]">HALLOWNEST</h1>
             <div className="flex gap-8">
-              {['home', 'characters', 'bosses', 'lore'].map((section) => (
+              {[{id: 'home', label: 'Главная'}, {id: 'characters', label: 'Персонажи'}, {id: 'bosses', label: 'Боссы'}, {id: 'lore', label: 'Лор'}].map((section) => (
                 <button
-                  key={section}
-                  onClick={() => setActiveSection(section)}
+                  key={section.id}
+                  onClick={() => setActiveSection(section.id)}
                   className={`text-xs uppercase tracking-[0.15em] transition-all duration-300 ${
-                    activeSection === section
+                    activeSection === section.id
                       ? 'text-white text-glow scale-110'
                       : 'text-white/70 hover:text-white hover:text-glow'
                   }`}
                 >
-                  {section}
+                  {section.label}
                 </button>
               ))}
             </div>
@@ -139,7 +139,7 @@ export default function Index() {
                   <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-white"></div>
                 </div>
                 <h2 className="text-7xl font-bold mb-4 text-white text-glow tracking-[0.2em]">
-                  HOLLOW KNIGHT
+                  ПОЛЫЙ РЫЦАРЬ
                 </h2>
                 <div className="flex justify-center items-center gap-4 mt-6">
                   <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-white"></div>
@@ -148,26 +148,26 @@ export default function Index() {
                 </div>
               </div>
               <p className="text-lg text-white/80 mb-12 leading-relaxed tracking-wide max-w-2xl mx-auto">
-                Beneath the fading town of Dirtmouth sleeps a kingdom of darkness and dreams
+                Под угасающим городом Дёртмаут спит королевство тьмы и снов
               </p>
               <div className="flex flex-col gap-6 items-center">
                 <button
                   onClick={() => setActiveSection('characters')}
                   className="px-12 py-4 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold uppercase tracking-[0.15em] text-sm"
                 >
-                  ⚔ Characters ⚔
+                  ⚔ Персонажи ⚔
                 </button>
                 <button
                   onClick={() => setActiveSection('bosses')}
                   className="px-12 py-4 border-2 border-white/70 text-white/90 hover:border-white hover:text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-[0.15em] text-sm"
                 >
-                  Bosses
+                  Боссы
                 </button>
                 <button
                   onClick={() => setActiveSection('lore')}
                   className="px-12 py-4 border-2 border-white/70 text-white/90 hover:border-white hover:text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-[0.15em] text-sm"
                 >
-                  Lore
+                  Лор
                 </button>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function Index() {
 
         {activeSection === 'characters' && (
           <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
-            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Characters</h2>
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Персонажи</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {characters.map((char) => (
                 <Card
@@ -221,7 +221,7 @@ export default function Index() {
 
         {activeSection === 'bosses' && (
           <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
-            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Bosses</h2>
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Боссы</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {bosses.map((boss) => (
                 <Card
@@ -273,7 +273,7 @@ export default function Index() {
 
         {activeSection === 'lore' && (
           <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
-            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Lore of Hallownest</h2>
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Лор Халлоунеста</h2>
             <div className="max-w-4xl mx-auto space-y-6">
               {loreEntries.map((entry) => (
                 <Card
