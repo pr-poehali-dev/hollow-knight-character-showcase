@@ -45,7 +45,8 @@ const bosses = [
     description: 'The vessel chosen to seal the Radiance. Final guardian of the Temple of the Black Egg.',
     location: 'Temple of the Black Egg',
     type: 'boss',
-    icon: 'Swords'
+    icon: 'Swords',
+    image: 'https://cdn.poehali.dev/files/43adc076-69a0-43b9-a4bd-bb8e56312562.png'
   },
   {
     id: 2,
@@ -54,25 +55,18 @@ const bosses = [
     description: 'Ancient god of light and dreams. Source of the infection plaguing Hallownest.',
     location: 'Dream Realm',
     type: 'boss',
-    icon: 'Sun'
+    icon: 'Sun',
+    image: 'https://cdn.poehali.dev/files/b3efda4f-01b8-41fc-aadf-dce4046fef3d.jpg'
   },
   {
     id: 3,
-    name: 'Soul Master',
-    difficulty: 'Medium',
-    description: 'Leader of the Soul Sanctum. Became consumed by his experiments with soul magic.',
-    location: 'Soul Sanctum',
-    type: 'boss',
-    icon: 'Ghost'
-  },
-  {
-    id: 4,
     name: 'Mantis Lords',
     difficulty: 'Medium',
     description: 'Three noble warriors who rule over the Mantis Tribe with honor and strength.',
     location: 'Mantis Village',
     type: 'boss',
-    icon: 'Flame'
+    icon: 'Flame',
+    image: 'https://cdn.poehali.dev/files/b3411d37-a9f3-4045-b1e3-ccf6dae17ecc.png'
   }
 ];
 
@@ -218,11 +212,19 @@ export default function Index() {
                   className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
                 >
                   <div className="flex flex-col">
-                    <div className="h-48 bg-gradient-to-br from-[#1a1f2c] via-[#805CF6]/30 to-[#6E59A5]/40 flex items-center justify-center relative overflow-hidden">
+                    <div className="h-64 bg-gradient-to-br from-[#1a1f2c] via-[#805CF6]/30 to-[#6E59A5]/40 flex items-center justify-center relative overflow-hidden">
                       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODA1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#805CF6] to-[#6E59A5] flex items-center justify-center shadow-2xl shadow-[#805CF6]/50 z-10">
-                        <Icon name={boss.icon} size={48} className="text-white" />
-                      </div>
+                      {boss.image ? (
+                        <img 
+                          src={boss.image} 
+                          alt={boss.name}
+                          className="w-40 h-40 object-contain z-10 drop-shadow-2xl"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#805CF6] to-[#6E59A5] flex items-center justify-center shadow-2xl shadow-[#805CF6]/50 z-10">
+                          <Icon name={boss.icon} size={48} className="text-white" />
+                        </div>
+                      )}
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
