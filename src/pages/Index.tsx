@@ -25,12 +25,12 @@ const characters = [
   },
   {
     id: 3,
-    name: 'Elderbug',
-    role: 'Guide',
-    description: 'Kind old bug residing in Dirtmouth. Provides guidance to travelers.',
-    location: 'Dirtmouth',
+    name: 'Zote',
+    role: 'Knight',
+    description: 'Self-proclaimed knight of great renown. Carries a wooden nail called Life Ender and follows his 57 precepts.',
+    location: 'Various',
     type: 'character',
-    icon: 'Heart'
+    icon: 'Shield'
   },
   {
     id: 4,
