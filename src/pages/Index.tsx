@@ -12,7 +12,8 @@ const characters = [
     description: 'Silent vessel created to contain the infection. Wields a nail and explores the depths of Hallownest.',
     location: 'Dirtmouth',
     type: 'character',
-    icon: 'Sword'
+    icon: 'Sword',
+    image: 'https://cdn.poehali.dev/files/3e6a19fb-5763-4335-bba3-64ad8264c003.jpg'
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ const characters = [
     description: 'Princess-protector of Hallownest. Daughter of the Pale King and Herrah the Beast.',
     location: 'Kingdom\'s Edge',
     type: 'character',
-    icon: 'Zap'
+    icon: 'Zap',
+    image: 'https://cdn.poehali.dev/files/f756e43a-b798-4560-8577-6fd64d47a4f8.jpg'
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const characters = [
     description: 'A thoughtful wanderer exploring Hallownest. Once served Monomon the Teacher.',
     location: 'Various',
     type: 'character',
-    icon: 'BookMarked'
+    icon: 'BookMarked',
+    image: 'https://cdn.poehali.dev/files/2a974248-f9e0-4a54-81f4-4c565526f5c3.jpg'
   }
 ];
 
@@ -182,11 +185,19 @@ export default function Index() {
                   className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
                 >
                   <div className="flex flex-col">
-                    <div className="h-48 bg-gradient-to-br from-[#1a1f2c] via-[#8B5CF6]/20 to-[#805CF6]/30 flex items-center justify-center relative overflow-hidden">
+                    <div className="h-64 bg-gradient-to-br from-[#1a1f2c] via-[#8B5CF6]/20 to-[#805CF6]/30 flex items-center justify-center relative overflow-hidden">
                       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOEI1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#805CF6] flex items-center justify-center shadow-2xl shadow-[#8B5CF6]/50 z-10">
-                        <Icon name={char.icon} size={48} className="text-white" />
-                      </div>
+                      {char.image ? (
+                        <img 
+                          src={char.image} 
+                          alt={char.name}
+                          className="w-40 h-40 object-contain z-10 drop-shadow-2xl"
+                        />
+                      ) : (
+                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#8B5CF6] to-[#805CF6] flex items-center justify-center shadow-2xl shadow-[#8B5CF6]/50 z-10">
+                          <Icon name={char.icon} size={48} className="text-white" />
+                        </div>
+                      )}
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
