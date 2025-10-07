@@ -101,20 +101,21 @@ export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-[#0f1419] text-[#E0E0E0]">
-      <nav className="border-b border-[#8B5CF6]/20 bg-[#0f1419]/95 backdrop-blur-sm fixed w-full z-50">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-[#0a0a0a] text-white relative">
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/50 to-black pointer-events-none"></div>
+      <nav className="border-b border-white/10 bg-black/80 backdrop-blur-md fixed w-full z-50">
+        <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-[#8B5CF6] tracking-wider">HALLOWNEST</h1>
-            <div className="flex gap-6">
+            <h1 className="text-2xl font-bold text-white text-glow tracking-[0.2em]">HALLOWNEST</h1>
+            <div className="flex gap-8">
               {['home', 'characters', 'bosses', 'lore'].map((section) => (
                 <button
                   key={section}
                   onClick={() => setActiveSection(section)}
-                  className={`text-sm uppercase tracking-wider transition-colors ${
+                  className={`text-xs uppercase tracking-[0.15em] transition-all duration-300 ${
                     activeSection === section
-                      ? 'text-[#8B5CF6]'
-                      : 'text-[#E0E0E0] hover:text-[#8B5CF6]'
+                      ? 'text-white text-glow scale-110'
+                      : 'text-white/70 hover:text-white hover:text-glow'
                   }`}
                 >
                   {section}
@@ -127,42 +128,56 @@ export default function Index() {
 
       <main className="pt-20">
         {activeSection === 'home' && (
-          <section className="min-h-[80vh] flex items-center justify-center px-4 animate-fade-in">
-            <div className="text-center max-w-4xl">
-              <div className="mb-8 animate-float">
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-b from-[#8B5CF6] to-[#805CF6] flex items-center justify-center shadow-2xl shadow-[#8B5CF6]/50">
-                  <Icon name="Crown" size={64} className="text-white" />
+          <section className="min-h-screen flex items-center justify-center px-4 animate-fade-in relative">
+            <div className="text-center max-w-5xl relative z-10">
+              <div className="mb-12 ornament-border py-8">
+                <div className="flex justify-center items-center gap-4 mb-6">
+                  <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-white"></div>
+                  <Icon name="Crown" size={32} className="text-white animate-float" />
+                  <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-white"></div>
+                </div>
+                <h2 className="text-7xl font-bold mb-4 text-white text-glow tracking-[0.2em]">
+                  HOLLOW KNIGHT
+                </h2>
+                <div className="flex justify-center items-center gap-4 mt-6">
+                  <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-white"></div>
+                  <Icon name="Sword" size={24} className="text-white" />
+                  <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-white"></div>
                 </div>
               </div>
-              <h2 className="text-6xl font-bold mb-6 text-[#E0E0E0]">
-                Welcome to <span className="text-[#8B5CF6]">Hallownest</span>
-              </h2>
-              <p className="text-xl text-[#8E9196] mb-8 leading-relaxed italic">
-                Beneath the fading town of Dirtmouth sleeps a kingdom of darkness and dreams. 
-                Explore the forgotten highways and ruined cities of a fallen civilization. 
-                Discover ancient mysteries and face deadly beasts.
+              <p className="text-lg text-white/80 mb-12 leading-relaxed tracking-wide max-w-2xl mx-auto">
+                Beneath the fading town of Dirtmouth sleeps a kingdom of darkness and dreams
               </p>
-              <div className="flex gap-4 justify-center">
+              <div className="flex flex-col gap-6 items-center">
                 <button
                   onClick={() => setActiveSection('characters')}
-                  className="px-8 py-3 bg-[#8B5CF6] text-white rounded-lg hover:bg-[#805CF6] transition-colors font-semibold"
+                  className="px-12 py-4 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 font-semibold uppercase tracking-[0.15em] text-sm"
                 >
-                  Explore Characters
+                  ⚔ Characters ⚔
+                </button>
+                <button
+                  onClick={() => setActiveSection('bosses')}
+                  className="px-12 py-4 border-2 border-white/70 text-white/90 hover:border-white hover:text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-[0.15em] text-sm"
+                >
+                  Bosses
                 </button>
                 <button
                   onClick={() => setActiveSection('lore')}
-                  className="px-8 py-3 border-2 border-[#8B5CF6] text-[#8B5CF6] rounded-lg hover:bg-[#8B5CF6]/10 transition-colors font-semibold"
+                  className="px-12 py-4 border-2 border-white/70 text-white/90 hover:border-white hover:text-white hover:bg-white/10 transition-all duration-300 uppercase tracking-[0.15em] text-sm"
                 >
-                  Read the Lore
+                  Lore
                 </button>
               </div>
+            </div>
+            <div className="absolute bottom-10 right-10 text-white/50 text-xs tracking-wider">
+              <p>team cherry</p>
             </div>
           </section>
         )}
 
         {activeSection === 'characters' && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <h2 className="text-5xl font-bold mb-12 text-center text-[#8B5CF6]">Characters</h2>
+          <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Characters</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {characters.map((char) => (
                 <Card
@@ -170,8 +185,8 @@ export default function Index() {
                   className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
                 >
                   <div className="flex flex-col">
-                    <div className="h-64 bg-gradient-to-br from-[#1a1f2c] via-[#8B5CF6]/20 to-[#805CF6]/30 flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOEI1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+                    <div className="h-64 bg-gradient-to-br from-black via-gray-900/50 to-black flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_transparent_70%)]"></div>
                       {char.image ? (
                         <img 
                           src={char.image} 
@@ -186,11 +201,11 @@ export default function Index() {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold text-[#E0E0E0]">{char.name}</h3>
-                        <Badge className="bg-[#805CF6] text-white">{char.role}</Badge>
+                        <h3 className="text-2xl font-bold text-white">{char.name}</h3>
+                        <Badge className="bg-white/10 text-white border border-white/30">{char.role}</Badge>
                       </div>
-                      <p className="text-[#8E9196] mb-3 leading-relaxed">{char.description}</p>
-                      <div className="flex items-center gap-2 text-sm text-[#8B5CF6]">
+                      <p className="text-white/70 mb-3 leading-relaxed">{char.description}</p>
+                      <div className="flex items-center gap-2 text-sm text-white/60">
                         <Icon name="MapPin" size={16} />
                         <span>{char.location}</span>
                       </div>
@@ -203,17 +218,17 @@ export default function Index() {
         )}
 
         {activeSection === 'bosses' && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <h2 className="text-5xl font-bold mb-12 text-center text-[#8B5CF6]">Bosses</h2>
+          <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Bosses</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
               {bosses.map((boss) => (
                 <Card
                   key={boss.id}
-                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 hover:shadow-xl hover:shadow-[#8B5CF6]/20 overflow-hidden"
+                  className="bg-black/50 border-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm overflow-hidden"
                 >
                   <div className="flex flex-col">
-                    <div className="h-64 bg-gradient-to-br from-[#1a1f2c] via-[#805CF6]/30 to-[#6E59A5]/40 flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODA1Q0Y2IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
+                    <div className="h-64 bg-gradient-to-br from-black via-gray-900/50 to-black flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_transparent_70%)]"></div>
                       {boss.image ? (
                         <img 
                           src={boss.image} 
@@ -228,21 +243,21 @@ export default function Index() {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-2xl font-bold text-[#E0E0E0]">{boss.name}</h3>
+                        <h3 className="text-2xl font-bold text-white">{boss.name}</h3>
                         <Badge
                           className={
                             boss.difficulty === 'Extreme'
-                              ? 'bg-red-600 text-white'
+                              ? 'bg-red-900/50 text-white border border-red-500/30'
                               : boss.difficulty === 'Hard'
-                              ? 'bg-orange-600 text-white'
-                              : 'bg-yellow-600 text-white'
+                              ? 'bg-orange-900/50 text-white border border-orange-500/30'
+                              : 'bg-yellow-900/50 text-white border border-yellow-500/30'
                           }
                         >
                           {boss.difficulty}
                         </Badge>
                       </div>
-                      <p className="text-[#8E9196] mb-3 leading-relaxed">{boss.description}</p>
-                      <div className="flex items-center gap-2 text-sm text-[#8B5CF6]">
+                      <p className="text-white/70 mb-3 leading-relaxed">{boss.description}</p>
+                      <div className="flex items-center gap-2 text-sm text-white/60">
                         <Icon name="MapPin" size={16} />
                         <span>{boss.location}</span>
                       </div>
@@ -255,26 +270,26 @@ export default function Index() {
         )}
 
         {activeSection === 'lore' && (
-          <section className="container mx-auto px-4 py-16 animate-fade-in">
-            <h2 className="text-5xl font-bold mb-12 text-center text-[#8B5CF6]">Lore of Hallownest</h2>
+          <section className="container mx-auto px-4 py-16 animate-fade-in relative z-10">
+            <h2 className="text-5xl font-bold mb-12 text-center text-white text-glow tracking-[0.2em]">Lore of Hallownest</h2>
             <div className="max-w-4xl mx-auto space-y-6">
               {loreEntries.map((entry) => (
                 <Card
                   key={entry.id}
-                  className="bg-[#1a1f2c] border-[#8B5CF6]/30 hover:border-[#8B5CF6] transition-all duration-300 p-8"
+                  className="bg-black/50 border-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm p-8"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#8B5CF6] to-[#805CF6] flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 border border-white/30 flex items-center justify-center flex-shrink-0">
                       <Icon name="BookOpen" size={24} className="text-white" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-2xl font-bold text-[#E0E0E0]">{entry.title}</h3>
-                        <Badge className="bg-[#805CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/30">
+                        <h3 className="text-2xl font-bold text-white">{entry.title}</h3>
+                        <Badge className="bg-white/10 text-white border border-white/30">
                           {entry.category}
                         </Badge>
                       </div>
-                      <p className="text-[#8E9196] leading-relaxed text-lg italic">{entry.content}</p>
+                      <p className="text-white/70 leading-relaxed text-lg italic">{entry.content}</p>
                     </div>
                   </div>
                 </Card>
@@ -284,9 +299,9 @@ export default function Index() {
         )}
       </main>
 
-      <footer className="border-t border-[#8B5CF6]/20 mt-20 py-8">
-        <div className="container mx-auto px-4 text-center text-[#8E9196]">
-          <p className="text-sm">
+      <footer className="border-t border-white/10 mt-20 py-8 relative z-10">
+        <div className="container mx-auto px-4 text-center text-white/50">
+          <p className="text-sm tracking-wider">
             Hallownest Encyclopedia • Inspired by Hollow Knight by Team Cherry
           </p>
         </div>

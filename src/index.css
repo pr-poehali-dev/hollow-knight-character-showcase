@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Trajan+Pro:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +6,40 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 0 0% 88%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 88%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 262 83% 58%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 15% 15%;
+    --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 263 70% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 263 70% 50%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 95%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
-    --void: 220 20% 7%;
-    --soul: 263 70% 50%;
-    --pale: 0 0% 88%;
-    --shade: 220 15% 15%;
+    --void: 0 0% 5%;
+    --soul: 0 0% 95%;
+    --pale: 0 0% 95%;
+    --shade: 0 0% 12%;
   }
 }
 
@@ -59,7 +59,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Cinzel", serif;
+    font-family: "Cinzel Decorative", serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
 }
 
@@ -91,5 +93,37 @@
     50% {
       transform: translateY(-10px);
     }
+  }
+
+  .text-glow {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4);
+  }
+
+  .ornament-border {
+    position: relative;
+  }
+
+  .ornament-border::before,
+  .ornament-border::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+  }
+
+  .ornament-border::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ornament-border::after {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
