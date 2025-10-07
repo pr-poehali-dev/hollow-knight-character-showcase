@@ -108,7 +108,7 @@ export default function Index() {
       <nav className="border-b border-white/10 bg-black/80 backdrop-blur-md fixed w-full z-50">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-white text-glow tracking-[0.2em]">HALLOWNEST</h1>
+            <h1 className="text-2xl font-bold text-white text-glow tracking-[0.2em]">ХАЛЛОУНЕСТ</h1>
             <div className="flex gap-8">
               {[{id: 'home', label: 'Главная'}, {id: 'characters', label: 'Персонажи'}, {id: 'bosses', label: 'Боссы'}, {id: 'lore', label: 'Лор'}].map((section) => (
                 <button
