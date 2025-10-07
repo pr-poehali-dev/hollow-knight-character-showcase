@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import Particles from '@/components/Particles';
 
 const characters = [
   {
@@ -102,6 +103,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white relative">
+      <Particles />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/50 to-black pointer-events-none"></div>
       <nav className="border-b border-white/10 bg-black/80 backdrop-blur-md fixed w-full z-50">
         <div className="container mx-auto px-4 py-6">
