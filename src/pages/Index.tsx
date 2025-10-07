@@ -27,15 +27,6 @@ const characters = [
   },
   {
     id: 3,
-    name: 'Zote',
-    role: 'Knight',
-    description: 'Self-proclaimed knight of great renown. Carries a wooden nail called Life Ender and follows his 57 precepts.',
-    location: 'Various',
-    type: 'character',
-    icon: 'Shield'
-  },
-  {
-    id: 4,
     name: 'Quirrel',
     role: 'Scholar',
     description: 'A thoughtful wanderer exploring Hallownest. Once served Monomon the Teacher.',
